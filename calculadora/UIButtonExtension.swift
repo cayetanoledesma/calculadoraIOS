@@ -1,0 +1,31 @@
+//
+//  UIButtonExtension.swift
+//  calculadora
+//
+//
+
+import UIKit
+
+private let orange = UIColor(red: 254/255, green: 148/255, blue: 0/255, alpha: 1)
+
+extension UIButton{
+//borde redondo
+    
+    func round(){
+        layer.cornerRadius = bounds.height/3
+        clipsToBounds = true
+    }
+    
+    //Brilla
+    
+    func shine(){
+        UIView.animate(withDuration: 0.1, animations: {
+            self.alpha = 0.5
+        }) {(completion) in
+        UIView.animate(withDuration: 0.1, animations: {
+            self.alpha = 1
+        })
+      }
+   }
+    
+}
